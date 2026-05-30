@@ -1,5 +1,9 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/sloth-rescue-squad/',
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true,
+  },
 });

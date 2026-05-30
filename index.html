@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦥</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>🦥 SLOTH RESCUE SQUAD 🦥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Animated background layer -->
+    <div id="bg-layer"></div>
+    <!-- Achievement toasts -->
+    <div id="toast-container"></div>
+
+    <div id="app">
+      <header id="header">
+        <h1><span id="secret-sloth" title="">🦥</span> SLOTH RESCUE SQUAD 🦥</h1>
+        <div id="stats">
+          <span id="zzz-display">💤 0 Zzz's</span>
+          <span id="rate-display">0/sec</span>
+          <span id="total-rescues">🦥 0 rescued</span>
+          <span id="rebirth-badge" style="display:none"></span>
+          <span id="strain-badge" style="display:none"></span>
+        </div>
+        <div id="credit">by aSlothLover</div>
+        <div id="header-btns">
+          <button id="mute-btn" title="Mute">🔊</button>
+          <button id="reset-btn" title="Reset save">🗑️</button>
+        </div>
+      </header>
+
+      <main id="game-area">
+        <!-- Left: Sanctuary -->
+        <section id="sanctuary">
+          <h2>🌿 The Sanctuary</h2>
+          <div id="sanctuary-tree">
+            <div id="sloth-display"></div>
+          </div>
+        </section>
+
+        <!-- Center: Rescue zone -->
+        <section id="rescue-zone">
+          <div id="situation-display">🚨 Loading sloth emergency...</div>
+
+          <div id="rescue-btn-wrapper">
+            <button id="rescue-btn">
+              <span class="btn-sloth">🦥</span>
+              <span class="btn-text">RESCUE!</span>
+            </button>
+          </div>
+
+          <div id="click-value">+1 Zzz per rescue</div>
+
+          <div id="action-btns">
+            <button id="minigame-btn" class="action-btn mg-ready">🎮 Rescue Rush!</button>
+            <button id="rebirth-btn" class="action-btn" disabled title="Requires 1 Dragon Sloth + 1M Zzz earned">🔄 Rebirth</button>
+          </div>
+
+          <div id="particles-container"></div>
+        </section>
+
+        <!-- Right: Shop -->
+        <section id="shop">
+          <h2>🛒 The Shop</h2>
+          <div id="shop-tabs">
+            <button class="tab-btn active" data-tab="sloths">🦥 Sloths</button>
+            <button class="tab-btn" data-tab="upgrades">⚡ Upgrades</button>
+          </div>
+          <div id="shop-content"></div>
+        </section>
+      </main>
+
+      <!-- Story ticker at bottom -->
+      <div id="story-bar" class="story-hidden">
+        <span id="story-ticker">📞 Sloth Rescue Squad — rescuing sloths since today.</span>
+      </div>
+    </div>
+
+    <!-- Hidden difficulty menu (secret — click the first sloth in the title) -->
+    <div id="difficulty-modal" style="display:none">
+      <div id="difficulty-box">
+        <div id="difficulty-title">🦥 Secret Settings</div>
+        <div id="difficulty-subtitle">Choose your adventure!</div>
+        <div id="difficulty-options">
+          <button class="diff-btn" data-diff="easy">
+            <span class="diff-emoji">🌟</span>
+            <div class="diff-text">
+              <span class="diff-name">Easy</span>
+              <span class="diff-desc">For young rescuers — cheaper sloths &amp; stronger clicks!</span>
+            </div>
+          </button>
+          <button class="diff-btn" data-diff="normal">
+            <span class="diff-emoji">🦥</span>
+            <div class="diff-text">
+              <span class="diff-name">Normal</span>
+              <span class="diff-desc">The balanced sloth experience</span>
+            </div>
+          </button>
+          <button class="diff-btn" data-diff="hard">
+            <span class="diff-emoji">🔥</span>
+            <div class="diff-text">
+              <span class="diff-name">Hard</span>
+              <span class="diff-desc">For serious sloth commanders only</span>
+            </div>
+          </button>
+        </div>
+        <div id="difficulty-note">First change is free — further changes reset your save.</div>
+        <button id="difficulty-close">Close</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
